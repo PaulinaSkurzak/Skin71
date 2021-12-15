@@ -14,6 +14,8 @@ import {AboutScreen} from "./screens/AboutScreen";
 
 const Drawer = createDrawerNavigator();
 
+/* Main app file */
+
 export default function App() {
   return (
     <NativeBaseProvider>
