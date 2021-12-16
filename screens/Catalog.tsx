@@ -2,7 +2,7 @@ import React , { useEffect } from "react";
 import {
     View,
     Text,
-    Button,
+    Divider,
     Box,
     FlatList,
     Image,
@@ -176,34 +176,38 @@ const CatalogItem = ({ route, navigation }:any) => {
 
   return (
     <Box>
-    <ScrollView>
-          <Box    rounded="lg"
-                  borderColor="#000000"
-                  backgroundColor="#0000ff"
-                  borderWidth="1">
-            <Center flex={1} px="3">
+    <ScrollView>    
+            <Divider my = "2" />
+            <Center flex={2} px="3">
               <Image
-                style={{width: 200, height: 100}}
+                style={{width: 350, height: 250}}
+                borderRadius={25}
                 source={img}
                 alt="Alternate Text"
                 size="xl"
               />
           </Center>
-         </Box>
+          <Divider my = "2" />
           <Stack p="4" space={3}>
             <Stack space={2}>
               <Heading size="md" ml="-1">
                  {fullName}
               </Heading>
-              <Text
-                fontSize="xs"
-               
+              <Box
+                fontSize="md"
+                 bg="primary.500"
+                 borderRadius="5"
                 fontWeight="500"
                 ml="-0.5"
                 mt="-1"
               >
+                <Center>
+                <Text 
+                color="white">
                 {recentText}
-              </Text>
+                </Text>
+                </Center>
+              </Box>
             </Stack>
             <Text fontWeight="400">
                 {fullText}
