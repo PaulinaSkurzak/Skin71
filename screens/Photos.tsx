@@ -24,14 +24,27 @@ const PhotoList = ({navigation}:any) => {
   )
 }
 
+import { useFocusEffect } from '@react-navigation/native';
+
 const Photo = ({navigation}:any) => {
+
+  useFocusEffect(
+  React.useCallback(() => {
+      // Do something when the screen is focused
+
+      return () => {
+        // Do something when the screen is unfocused
+        // Useful for cleanup functions
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Main' }]})
+      };
+    }, [])
+  );
 
   return (
     <View>
       <Text>Photo</Text>
-      <Button onPress={() => navigation.reset({
-                   index: 0,
-                   routes: [{ name: 'Main' }]})}>Go to Home </Button>
       <Button onPress={() => navigation.goBack()}>Go back </Button>
     </View>
   )
